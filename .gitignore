@@ -1,0 +1,14 @@
+# ide
+**.idea
+**.vscode
+
+#python
+venv
+**__pycache__
+
+#chore
+.env
+*.log
+
+#other
+*.rdb

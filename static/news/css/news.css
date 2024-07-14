@@ -1,0 +1,74 @@
+.post .logo svg path{
+    fill: #221D1D;
+}
+.post header a{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: normal;
+    color: #221D1D;
+}
+.post .shift_lang{
+    color: #221D1D;
+}
+.post .active_lang {
+    color: #4C59FE;
+}
+
+.post main{
+    margin-top: 5rem;
+}
+
+.headline_news{
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 32.5rem;
+    margin-bottom: 3rem;
+    padding-left: 2.06rem;
+    padding-right: 2.06rem;
+    padding-bottom: 3rem;
+    border-radius: .875rem;
+}
+.headline_news h2{
+    font-size: 3.15rem;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.post main p{
+    margin-top: 0.85rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: normal;
+    color: #221D1D;
+}
+.post main .sign_up{
+    margin-top: 3.75rem;
+    margin-left: 0;
+    margin-bottom: 7.81rem;
+    cursor: pointer;
+}
+
+
+/*      */
+.page_news {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 3rem 2%;
+}
+.page_news article{
+    width: 49%;
+}
+/*      */
+
+@media (max-width: 768px) {
+    .page_news {
+        flex-direction: column;
+    }
+    .page_news article {
+        width: 100%;
+    }
+}
