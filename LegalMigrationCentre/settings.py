@@ -132,5 +132,7 @@ MEDIA_URL = '/media/'
 CSRF_TRUSTED_ORIGINS = [
     'https://t.me/LegalMigrationCentreBot',
     'https://lmc-mos.ru',
-    'https://79.174.80.45:8025',
+    'http://lmc-mos.ru',
+    'https://194.67.118.153:8000',
+    'http://194.67.118.153:8000',
 ]

@@ -36,7 +36,7 @@ def index_en(request):
     posts = News.objects.filter(is_published=True)[:3]
     services = Service.objects.filter(is_published=True)
     reviews = Reviews.objects.all()[:6]
-    return render(request, 'news/index.html', context={'posts': posts, 'services': services, 'reviews': reviews})
+    return render(request, 'news/index_en.html', context={'posts': posts, 'services': services, 'reviews': reviews})
 
 
 def all_news_en(request):
