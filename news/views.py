@@ -58,8 +58,6 @@ def get_comments_en(request):
     return render(request, 'news/comment_en.html', context={'reviews': reviews})
 
 
-
-
-
-def pageNotFound(request, exception):
-    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+def pageNotFound(requests, exception):
+    return render(requests, 'news/error.html')
+    # return HttpResponseNotFound('<h1>Страница не найдена</h1>')

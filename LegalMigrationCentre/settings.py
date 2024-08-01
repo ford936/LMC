@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-7rj4us5y7rw03=^m+daxy8=1+5jaa$jif@3z5zjn#6$-!r)swb"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -130,9 +130,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://t.me/LegalMigrationCentreBot',
     'https://lmc-mos.ru',
     'http://lmc-mos.ru',
     'https://194.67.118.153:8000',
     'http://194.67.118.153:8000',
+    'http://127.0.0.1:8000',
 ]

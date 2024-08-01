@@ -156,6 +156,7 @@ header a{
 
     border-radius: .625rem;
     background-color: #0D1BC5;
+    cursor: pointer;
 }
 
 /* services start */

@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://lmc-mos.ru/">
 
-    <title>LegalMigrationCentre</title>
+    <title>LegalMigrationCentre - Migration services</title>
+    <meta name="description" content="Migration center: services for obtaining a residence permit, a residence permit and citizenship. Professional support of civil cases and consultations on migration legislation. Your rights are our concern!">
+    <meta name="keywords" content="Migration services in Moscow,documents for Sakharovo,support in civil law cases, legal advice, legal assistance, citizenship,residence permit,VKS,RVP,RVPO,prohibition lawyer, how to obtain citizenship">
+
+    <meta property="og:title" content="LegalMigrationCentre - Migration services" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lmc-mos.ru/" />
+    <meta property="og:image" content="{% static 'news/images/icons/logo.png' %}" />
+
     <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
@@ -188,11 +197,12 @@
         <button class="default_button sign_up" onclick="location.href='/en/news/'">Show all</button>
     </section>
     {% endblock %}
+    {% block review %}
+        {% if reviews.count != 0 %}
     <section class="container comments" id="comment-section">
         <h2 class="chapter" id="title_comment">Reviews</h2>
 
 
-        {% block review %}
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 {% for r in reviews %}
@@ -224,12 +234,13 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
         </div>
-        {% endblock %}
 
         <button class="default_button sign_up" onclick="location.href='/en/comments/'">
             Show all
         </button>
     </section>
+        {% endif %}
+    {% endblock %}
 
     <section class="container map_mobile">
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad7dae03dc90344649ecf2e6ffeb314e52baf78f97b7be7a68653c4de316d67a2&amp;source=constructor" width="100%" height="429" frameborder="0"></iframe>

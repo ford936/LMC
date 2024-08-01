@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+
+    <title>LegalMigrationCentre</title>
+    <link type="text/css" href="{% static 'news/css/style.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'news/css/slider.css' %}" rel="stylesheet">
+
+    <!-- Стандартный фавикон -->
+    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
+    <!-- Для iPhone 6 Plus с @3x дисплеем: -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
+    <!-- Для последних версий Chrome и Firefox: -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
+    <!-- Дополнительный тег -->
+    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
+    <style>
+        *{
+            transition: all 0.6s;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body{
+            font-family: 'Lato', sans-serif;
+            color: #888;
+            margin: 0;
+        }
+
+        #main{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .fof{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fof h1{
+              font-weight: 400;
+              font-size: 50px;
+              display: inline-block;
+              padding-right: 12px;
+              animation: type .5s alternate infinite;
+        }
+        .fof a{
+            margin-top: 30px;
+            padding: 8px 10px;
+            font-size: 25px;
+            color: #888;
+            border: 3.5px solid #888;
+            border-radius: 8px;
+        }
+
+        @keyframes type{
+              from{box-shadow: inset -3px 0px 0px #888;}
+              to{box-shadow: inset -3px 0px 0px transparent;}
+        }
+    </style>
+</head>
+<body>
+    <section id="main">
+        <div class="fof">
+            <h1>Error 404</h1>
+            <a href="/">Come back home</a>
+        </div>
+    </section>
+</body>
+</html>
