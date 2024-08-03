@@ -13,3 +13,4 @@ venv
 #other
 *.rdb
 db.sqlite3
+**default.sock
