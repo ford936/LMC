@@ -12,3 +12,4 @@ venv
 
 #other
 *.rdb
+db.sqlite3

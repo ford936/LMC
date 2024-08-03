@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.views.decorators.http import require_GET
 
 from .models import News, Service, Reviews
 
@@ -61,3 +62,21 @@ def get_comments_en(request):
 def pageNotFound(requests, exception):
     return render(requests, 'news/error.html')
     # return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /admin/",
+        "Disallow: /private/",
+        "Disallow: /temp/",
+        "Allow: /public/",
+        "Allow: /images/",
+        "Sitemap: https://lmc-mos.ru/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+def sitemap(request):
+    return render(request, 'news/sitemap.xml')
