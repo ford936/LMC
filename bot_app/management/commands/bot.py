@@ -119,4 +119,4 @@ async def get_final(message):
 
 bot.add_custom_filter(TextMatchFilter())
 bot.add_custom_filter(StateFilter(bot))
-asyncio.run(bot.infinity_polling(skip_pending=True, timeout=30))
+asyncio.run(bot.infinity_polling(skip_pending=True, request_timeout=30))
