@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru" amp>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,7 +124,7 @@
         <span class="card_news-date">{{p.time_create|date:"d.m.Y"}}</span>
         <p>
             {% autoescape on %}
-            {{p.content}}
+            {{p.content|linebreaks}}
             {% endautoescape %}
         </p>
         <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
