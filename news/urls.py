@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, get_news, pageNotFound, all_news, get_comments, index_en, get_news_en, all_news_en, get_comments_en
+from .views import index, get_news, all_news, get_comments, index_en, get_news_en, all_news_en, get_comments_en
 urlpatterns = [
     path('', index, name='home'),
     path('news/', all_news, name='news'),

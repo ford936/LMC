@@ -21,7 +21,7 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 
 from LegalMigrationCentre import settings
-from news.views import get_news, pageNotFound, robots_txt, sitemap
+from news.views import get_news, robots_txt, sitemap
 from django.urls import include
 
 urlpatterns = [
@@ -36,4 +36,4 @@ urlpatterns = [
 # if settings.DEBUG:
 #     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = pageNotFound
+handler404 = "news.views.page_not_found"
