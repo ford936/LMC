@@ -30,7 +30,6 @@ urlpatterns = [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     path("robots.txt", robots_txt),
-    path("sitemap.xml", sitemap)
 ]
 
 # if settings.DEBUG:

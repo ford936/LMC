@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django.contrib.sitemaps',
     'news.apps.NewsConfig',
-    'bot_app.apps.BotAppConfig'
+    'bot_app.apps.BotAppConfig',
 ]
 
 MIDDLEWARE = [
