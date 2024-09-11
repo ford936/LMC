@@ -13,5 +13,5 @@ venv
 #other
 *.rdb
 db.sqlite3
-media
+media/*
 **default.sock
