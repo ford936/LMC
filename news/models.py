@@ -29,7 +29,7 @@ class News(models.Model):
 class Service(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     title_en = models.CharField(max_length=255, blank=True, verbose_name="Заголовок английский")
-    slug = models.SlugField(max_length=255, db_index=True, verbose_name="URL")
+    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
     price = models.CharField(max_length=50, blank=False, verbose_name="Цена")
     content = models.TextField(blank=False, verbose_name="Текст услуги")
     content_en = models.TextField(blank=True, verbose_name="Текст услуги английский")
