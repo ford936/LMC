@@ -41,7 +41,7 @@
     margin-top: 0.85rem;
     font-size: 1.25rem;
     font-weight: 500;
-    line-height: normal;
+    line-height: 150%;
     color: #221D1D;
 }
 .post main .sign_up{
@@ -63,6 +63,22 @@
     width: 49%;
 }
 /*      */
+
+.service_price{
+    margin-top: 1rem;
+}
+.service_price > div {
+    width: 70%;
+}
+.service_price span{
+    margin-top: 0.85rem;
+    width: 30%;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: normal;
+    color: #255ed1;
+    text-align: end;
+}
 
 @media (max-width: 768px) {
     .page_news {

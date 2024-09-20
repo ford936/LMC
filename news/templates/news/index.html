@@ -75,9 +75,9 @@
                     <a href="https://t.me/LegalMigrationCentreBot?start=hello">
                         <img src="{% static 'news/images/icons/telegram.svg' %}" alt="telegram">
                     </a>
-<!--                    <a href="#">-->
-<!--                        <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">-->
-<!--                    </a>-->
+                    <a href="https://vk.com/legalmigrationcentre">
+                        <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">
+                    </a>
 <!--                    <a href="#">-->
 <!--                        <img src="{% static 'news/images/icons/whatsapp.svg' %}" alt="whatsapp">-->
 <!--                    </a>-->
@@ -113,9 +113,9 @@
                         <a href="https://t.me/LegalMigrationCentreBot?start=hello">
                             <img src="{% static 'news/images/icons/telegram.svg' %}" alt="telegram">
                         </a>
-<!--                        <a href="#">-->
-<!--                            <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">-->
-<!--                        </a>-->
+                        <a href="https://vk.com/legalmigrationcentre">
+                            <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">
+                        </a>
 <!--                        <a href="#">-->
 <!--                            <img src="{% static 'news/images/icons/whatsapp.svg' %}" alt="whatsapp">-->
 <!--                        </a>-->
@@ -147,20 +147,21 @@
         <div class="services-list" id="cardsServices">
             {% block services %}
             {% for s in services %}
-            <article onclick="openServices('{{s.content}}', '{{s.title}}', '{{s.photo.url}}')" style="background: url('{{s.photo.url}}') no-repeat; background-size: cover;">
-                <h4 class="services-name" id="card_{{s.pk}}">
-                    {{s.title}}
-                </h4>
-                <div class="flex-align-center" style="gap: 8px;">
-                    <span class="red_detailed">
-<!--                        Читать подробнее-->
-                        Подробнее
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                        <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5L14 4.5V3.5L0 3.5L0 4.5Z" fill="white"/>
-                    </svg>
-                </div>
-            </article>
+            <a href="{{ s.get_absolute_url }}">
+                <article style="background: url('{{s.photo.url}}') no-repeat; background-size: cover;">
+                    <h4 class="services-name" id="card_{{s.pk}}">
+                        {{s.title}}
+                    </h4>
+                    <div class="flex-align-center" style="gap: 8px;">
+                        <span class="red_detailed">
+                            Подробнее
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
+                            <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5L14 4.5V3.5L0 3.5L0 4.5Z" fill="white"/>
+                        </svg>
+                    </div>
+                </article>
+            </a>
             {% endfor %}
             {% endblock %}
         </div>
@@ -299,21 +300,23 @@
                 <p>ИП Удовидчик Павел Валерьевич</p>
                 <p>ОГРНИП 324480000028179</p>
                 <p>ИНН 482603225602</p>
+                <a href="/privacy_policy"><p style="margin-bottom: 1rem;">Политика конфиденциальности</p></a>
 
-                <div class="footer-tags">
-                    <span>КВОТА</span>
-                    <span>РВП</span>
-                    <span>ГРАЖДАНСТВО</span>
-                    <span>РВПО</span>
-                    <span>ВНЖ</span>
-                </div>
+<!--                <div class="footer-tags">-->
+
+<!--                    <span>КВОТА</span>-->
+<!--                    <span>РВП</span>-->
+<!--                    <span>ГРАЖДАНСТВО</span>-->
+<!--                    <span>РВПО</span>-->
+<!--                    <span>ВНЖ</span>-->
+<!--                </div>-->
                 <div class="flex messengers">
                     <a href="https://t.me/LegalMigrationCentreBot?start=hello">
                         <img src="{% static 'news/images/icons/telegram.svg' %}" alt="telegram">
                     </a>
-<!--                    <a href="#">-->
-<!--                        <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">-->
-<!--                    </a>-->
+                    <a href="https://vk.com/legalmigrationcentre">
+                        <img src="{% static 'news/images/icons/vk.svg' %}" alt="vk">
+                    </a>
 <!--                    <a href="#">-->
 <!--                        <img src="{% static 'news/images/icons/whatsapp.svg' %}" alt="whatsapp">-->
 <!--                    </a>-->

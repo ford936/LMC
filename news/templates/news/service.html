@@ -2,29 +2,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://lmc-mos.ru/">
     {% block decsription %}
-        {% for p in post %}
-    <title>{{p.title}}</title>
-    <meta name="description" content="{{p.content|truncatewords:140}}">
+        {% for s in service %}
+    <title>{{s.title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://lmc-mos.ru/">
+    <meta name="yandex-verification" content="982a767a86672e1d" />
+    <meta name="google-site-verification" content="YlTDL8llI4CHm35i9wu0rlfdqt7pEJQ9z3AoyK9n_n8" />
+
+    <meta name="description" content="{{s.content|truncatewords:140}}">
     <meta name="keywords" content="Миграционные услуги в москве,Документы Сахарово, сопровождение по гражданским-правовым делам, консультация юриста, юридическая помощь, гражданство,ВНЖ,ВКС,РВП,РВПО,адвокат по запретам, как получить гражданство">
         {% endfor %}
     {% endblock %}
-    <meta property="og:title" content="LegalMigrationCentre - Миграционные услуги. Новости" />
+    <meta property="og:title" content="LegalMigrationCentre - Миграционные услуги" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lmc-mos.ru/" />
     <meta property="og:image" content="{% static 'news/images/icons/logo.png' %}" />
 
-    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
-    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
-
     <link type="text/css" href="{% static 'news/css/style.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'news/css/news.css' %}" rel="stylesheet">
-    
+
+    <!-- Стандартный фавикон -->
+    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
+    <!-- Для iPhone 6 Plus с @3x дисплеем: -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
+    <!-- Для последних версий Chrome и Firefox: -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
+    <!-- Дополнительный тег -->
+    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
 </head>
 <body class="post">
     <header class="container main_menu">
@@ -119,20 +125,25 @@
     </header>
     <main class="container">
         {% block services %}
-        {% for p in post %}
-        <div class="headline_news" style="background: url('{{p.photo.url}}') no-repeat;background-size: cover;">
-            <h1 class="headline_news-title">{{p.title}}</h1>
-        </div>
-        <span class="card_news-date">{{p.time_create|date:"d.m.Y"}}</span>
-        <p>
-            {% autoescape on %}
-            {{p.content|linebreaks}}
-            {% endautoescape %}
-        </p>
-        <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
-            Записаться на консультацию
-        </button>
-        {% endfor %}
+            {% for p in service %}
+                <div class="headline_news" style="background: url('{{p.photo.url}}') no-repeat;background-size: cover;">
+                    <h1 class="headline_news-title">{{p.title}}</h1>
+                </div>
+                <div class="flex service_price">
+                    <div>
+                        <p>
+                            {% autoescape on %}
+                            {{p.content|linebreaks}}
+                            {% endautoescape %}
+                        </p>
+                    </div>
+                    <span>от {{p.price}} рублей</span>
+
+                </div>
+                <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
+                    Записаться на консультацию
+                </button>
+            {% endfor %}
         {% endblock %}
     </main>
     <footer id="contacts-section">

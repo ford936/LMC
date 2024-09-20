@@ -140,7 +140,9 @@ async def get_start(message):
             await bot.send_message(message.chat.id, text='Вас приветствует LegalMigrationCentre. Для получения '
                                                          'консультации заполните заявку. Нажимая "Продолжить" вы '
                                                          'передадите первичные контактные данные, которые будут '
-                                                         'использованы для улучшения качества обратной связи.',
+                                                         'использованы для улучшения качества обратной связи.')
+            await bot.send_message(message.chat.id, text='Согласие на обработку персональных данных: '
+                                                         'https://lmc-mos.ru/consent_data_processing/',
                                    reply_markup=await auth_markup())
             await bot.set_state(message.from_user.id, MyStates.auth, message.chat.id)
         else:

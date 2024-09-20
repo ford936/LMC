@@ -2,29 +2,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <title>Миграционные услуги - Согласие на обработку данных</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
     <link rel="canonical" href="https://lmc-mos.ru/">
-    {% block decsription %}
-        {% for p in post %}
-    <title>{{p.title}}</title>
-    <meta name="description" content="{{p.content|truncatewords:140}}">
+    <meta name="yandex-verification" content="982a767a86672e1d" />
+    <meta name="google-site-verification" content="YlTDL8llI4CHm35i9wu0rlfdqt7pEJQ9z3AoyK9n_n8" />
+
+    <meta name="description" content="Миграционный центр: услуги по получению ВНЖ, РВП и гражданства. Профессиональное сопровождение гражданских дел и консультации по миграционному законодательству">
     <meta name="keywords" content="Миграционные услуги в москве,Документы Сахарово, сопровождение по гражданским-правовым делам, консультация юриста, юридическая помощь, гражданство,ВНЖ,ВКС,РВП,РВПО,адвокат по запретам, как получить гражданство">
-        {% endfor %}
-    {% endblock %}
-    <meta property="og:title" content="LegalMigrationCentre - Миграционные услуги. Новости" />
+
+    <meta property="og:title" content="LegalMigrationCentre - Миграционные услуги" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lmc-mos.ru/" />
     <meta property="og:image" content="{% static 'news/images/icons/logo.png' %}" />
 
-    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
-    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
-
     <link type="text/css" href="{% static 'news/css/style.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'news/css/news.css' %}" rel="stylesheet">
-    
+
+    <!-- Стандартный фавикон -->
+    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
+    <!-- Для iPhone 6 Plus с @3x дисплеем: -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
+    <!-- Для последних версий Chrome и Firefox: -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
+    <!-- Дополнительный тег -->
+    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
 </head>
 <body class="post">
     <header class="container main_menu">
@@ -118,22 +121,46 @@
         </div>
     </header>
     <main class="container">
-        {% block services %}
-        {% for p in post %}
-        <div class="headline_news" style="background: url('{{p.photo.url}}') no-repeat;background-size: cover;">
-            <h1 class="headline_news-title">{{p.title}}</h1>
-        </div>
-        <span class="card_news-date">{{p.time_create|date:"d.m.Y"}}</span>
-        <p>
-            {% autoescape on %}
-            {{p.content|linebreaks}}
-            {% endautoescape %}
+        <h2 style="text-align: center">Согласие пользователя сайта на обработку персональных данных</h2>
+        <p style="text-indent: 45px;">
+            Дееспособное физическое лицо (пользователь сайта), к которому относятся предоставляемые нижеуказанные персональные данные, действуя добровольно, разумно и по своей воле,
+            перейдя на сайт, расположенный по уникальному адресу: https://lmc-mos.ru/ и продолжая его использование, даёт согласие ИП Удовидчик Павлу Валерьевичу, адрес местонахождения:
+            Липецкая область, г. Липецк, ИНН 482603225602, (Оператор), на обработку (автоматизированную и неавтоматизированную) предоставляемых им нижеуказанных персональных данных, включая использование интернет-сервисов, в соответствии со следующем перечнем:
+            <br>
+            — имя, фамилия, отчество (при наличии) субъекта персональных данных;
+            <br>
+            — номер телефона субъекта персональных данных;
+            <br>
+            — гражданство субъекта персональных данных;
+            <br>
+            — ip адрес;
+            <br>
+            — данные о местоположении;
+            <br>
+            — данные об ip-адресе;
+            <br>
+            — пользовательские клики, просмотры страниц, заполнения полей, показы и просмотры фото;
+            <br>
+            — данные об устройстве пользователя сайта, через которое осуществляется использование сайта (разрешение, версия информационной системе, браузер);
+            <br>
+            — данные о провайдере услуг;
+            <br>
+            — данные, указанные в Политике использования cookie;
+            <br>
+            — иные персональные данные, добровольно предоставленные пользователем сайта,
+            <br>
+            для целей: заключения договоров, установления обратной связи, включая направление уведомлений, запросов, касающихся поданного обращения через форму обратной связи на Сайте,
+            обработки полученных запросов и заявок субъекта персональных данных, обеспечения работоспособности и практичности использования Сайта.
+            Оператор, для достижения указанных выше целей, может передавать персональные данные третьим лицам.
         </p>
-        <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
-            Записаться на консультацию
-        </button>
-        {% endfor %}
-        {% endblock %}
+        <p style="text-indent: 45px;">
+            Я ознакомлен(а) с тем, что под обработкой данных понимаются действия с персональными данными, включая сбор, систематизацию, накопление, хранение, уточнение
+            (обновление, изменение), использование, распространение (в том числе передача третьим лицам), обезличивание, блокирование, уничтожение персональных данных.
+        </p>
+        <p style="text-indent: 45px;">
+            Настоящее согласие действует со дня его предоставления до дня отзыва в письменной форме, в соответствии с требованиями законодательства Российской Федерации.
+        </p>
+        <br><br>
     </main>
     <footer id="contacts-section">
         <div class="container flex">

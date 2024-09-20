@@ -1,34 +1,40 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
     <link rel="canonical" href="https://lmc-mos.ru/">
+    <meta name="yandex-verification" content="982a767a86672e1d" />
+    <meta name="google-site-verification" content="YlTDL8llI4CHm35i9wu0rlfdqt7pEJQ9z3AoyK9n_n8" />
     {% block decsription %}
-        {% for p in post %}
-    <title>{{p.title}}</title>
-    <meta name="description" content="{{p.content|truncatewords:140}}">
-    <meta name="keywords" content="Миграционные услуги в москве,Документы Сахарово, сопровождение по гражданским-правовым делам, консультация юриста, юридическая помощь, гражданство,ВНЖ,ВКС,РВП,РВПО,адвокат по запретам, как получить гражданство">
+        {% for s in service %}
+    <title>{{s.title_en}}</title>
+    <meta name="description" content="{{s.content_en|truncatewords:140}}">
+    <meta name="keywords" content="Migration services in Moscow,documents for Sakharovo,support in civil law cases, legal advice, legal assistance, citizenship,residence permit,VKS,RVP,RVPO,prohibition lawyer, how to obtain citizenship">
         {% endfor %}
     {% endblock %}
-    <meta property="og:title" content="LegalMigrationCentre - Миграционные услуги. Новости" />
+
+    <meta property="og:title" content="LegalMigrationCentre - Migration services" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lmc-mos.ru/" />
     <meta property="og:image" content="{% static 'news/images/icons/logo.png' %}" />
 
-    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
-    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
-
     <link type="text/css" href="{% static 'news/css/style.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'news/css/news.css' %}" rel="stylesheet">
-    
+
+    <!-- Стандартный фавикон -->
+    <link rel="icon" href="{% static 'news/images/icons/favicon.ico' %}" type="image/x-icon">
+    <!-- Для iPhone 6 Plus с @3x дисплеем: -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'news/images/icons/apple-touch-icon.png' %}">
+    <!-- Для последних версий Chrome и Firefox: -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'news/images/icons/android-chrome-192x192.png' %}">
+    <!-- Дополнительный тег -->
+    <link rel="shortcut icon" href="{% static 'news/images/icons/favicon.ico' %}">
 </head>
 <body class="post">
-    <header class="container main_menu">
-        <a href="/" class="logo">
+<header class="container main_menu">
+        <a href="/en" class="logo">
             <svg width="236" height="24" viewBox="0 0 236 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.15511 1.82941V2.31534C5.61202 2.33439 5.19278 2.39156 4.91647 2.49637C4.64015 2.60118 4.44959 2.79174 4.35431 3.07758C4.25903 3.35389 4.21139 3.79218 4.21139 4.39245V16.3311C4.21139 16.9123 4.25903 17.3411 4.35431 17.6269C4.44959 17.9127 4.64015 18.1033 4.91647 18.1891C5.19278 18.2748 5.61202 18.3224 6.15511 18.3224H7.90827C8.66099 18.3224 9.28031 18.2462 9.74718 18.0842C10.2236 17.9223 10.5952 17.6745 10.881 17.322C11.1573 16.979 11.3765 16.5121 11.5194 15.9404C11.6623 15.3687 11.7767 14.6541 11.8529 13.8252H12.4055C12.3579 14.3207 12.3293 14.9781 12.3293 15.7975C12.3293 16.1024 12.3388 16.5407 12.3674 17.1124C12.396 17.6841 12.4341 18.2748 12.5008 18.8846C11.6814 18.856 10.7572 18.837 9.72813 18.8274C8.6991 18.8274 7.78441 18.8179 6.98405 18.8179H5.62154C5.06892 18.8179 4.46865 18.8179 3.83027 18.8274C3.19189 18.8274 2.53446 18.8465 1.87702 18.856C1.21959 18.8655 0.590738 18.8751 0 18.8941V18.4082C0.543098 18.3796 0.962332 18.3129 1.23865 18.2176C1.51496 18.1224 1.70552 17.9318 1.8008 17.6364C1.89608 17.3506 1.94372 16.9123 1.94372 16.3406V4.40198C1.94372 3.81124 1.89608 3.37295 1.8008 3.08711C1.70552 2.81079 1.51496 2.61071 1.23865 2.5059C0.962332 2.40109 0.543098 2.34392 0 2.32487V1.83893C0.333481 1.85799 0.781299 1.86752 1.3244 1.88657C1.8675 1.90563 2.45823 1.91516 3.07756 1.91516C3.63971 1.91516 4.19234 1.91516 4.75449 1.88657C5.31665 1.85799 5.77399 1.85799 6.13606 1.83893L6.15511 1.82941Z" fill="white"/>
                 <path d="M19.704 6.13605C21.1142 6.13605 22.2194 6.56482 23.0103 7.42234C23.8011 8.27986 24.2013 9.61379 24.2013 11.4336H15.7022L15.6737 10.9763H21.8859C21.9145 10.1855 21.8574 9.46134 21.6954 8.79438C21.5334 8.12741 21.2857 7.59384 20.9427 7.19367C20.5997 6.79349 20.1518 6.5934 19.6087 6.5934C18.8656 6.5934 18.2176 6.96499 17.646 7.69865C17.0743 8.43231 16.7313 9.60426 16.6265 11.2145L16.7027 11.3098C16.6741 11.548 16.6455 11.8148 16.6265 12.1006C16.6074 12.3864 16.5979 12.6818 16.5979 12.9677C16.5979 14.0634 16.7789 14.9971 17.1314 15.788C17.484 16.5788 17.9509 17.1695 18.513 17.5792C19.0752 17.9889 19.6754 18.189 20.2852 18.189C20.7712 18.189 21.2285 18.1128 21.6573 17.9603C22.086 17.8079 22.4957 17.5506 22.8578 17.1981C23.2199 16.8456 23.5438 16.3692 23.8201 15.7784L24.2965 15.969C24.1155 16.5026 23.8297 17.0075 23.4295 17.5125C23.0293 18.008 22.5243 18.4177 21.9145 18.7321C21.3047 19.0465 20.5997 19.199 19.7993 19.199C18.6464 19.199 17.6555 18.9322 16.8266 18.4082C15.9976 17.8841 15.3688 17.1409 14.9209 16.2072C14.4827 15.2639 14.254 14.1872 14.254 12.9677C14.254 11.5575 14.4827 10.3379 14.9305 9.31842C15.3783 8.29892 16.0167 7.51762 16.8361 6.95546C17.6555 6.40284 18.6083 6.12653 19.704 6.12653V6.13605Z" fill="white"/>
@@ -53,10 +59,10 @@
             </svg>
         </a>
         <nav class="menu">
-            <a href="/#services-section">Услуги</a>
-            <a href="/news">Новости</a>
-            <a href="/comments">Отзывы</a>
-            <a href="#contacts-section">Контакты</a>
+            <a href="/en#services-section">Services</a>
+            <a href="/en/news">News</a>
+            <a href="/en/comments">Reviews</a>
+            <a href="#contacts-section">Contacts</a>
         </nav>
         <div class="flex-align-center mobile_phone">
             <div class="flex-column menu-phone">
@@ -76,8 +82,8 @@
             </div>
         </div>
         <div class="flex block-shift_lang">
-            <span class="shift_lang active_lang" id="lang_rus" onclick="switchLang('ru')">RUS</span>
-            <span class="shift_lang" id="lang_eng" onclick="switchLang('en')">ENG</span>
+            <span class="shift_lang" id="lang_rus" onclick="switchLang('ru')">RUS</span>
+            <span class="shift_lang active_lang" id="lang_eng" onclick="switchLang('en')">ENG</span>
         </div>
 
         <div class="mobile_menu">
@@ -96,10 +102,10 @@
                     </svg>
                 </button>
                 <nav class="flex-column mobile_menu-nav">
-                    <a href="/#services-section" onclick="close_menu()">Услуги</a>
-                    <a href="/news" onclick="close_menu()">Новости</a>
-                    <a href="/comments" onclick="close_menu()">Отзывы</a>
-                    <a href="#contacts-section" onclick="close_menu()">Контакты</a>
+                    <a href="/en#services-section" onclick="close_menu()">Services</a>
+                    <a href="/en/news" onclick="close_menu()">News</a>
+                    <a href="/en/comments" onclick="close_menu()">Reviews</a>
+                    <a href="#contacts-section" onclick="close_menu()">Contacts</a>
 
 
                 </nav>
@@ -119,23 +125,28 @@
     </header>
     <main class="container">
         {% block services %}
-        {% for p in post %}
-        <div class="headline_news" style="background: url('{{p.photo.url}}') no-repeat;background-size: cover;">
-            <h1 class="headline_news-title">{{p.title}}</h1>
-        </div>
-        <span class="card_news-date">{{p.time_create|date:"d.m.Y"}}</span>
-        <p>
-            {% autoescape on %}
-            {{p.content|linebreaks}}
-            {% endautoescape %}
-        </p>
-        <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
-            Записаться на консультацию
-        </button>
-        {% endfor %}
+            {% for p in service %}
+            <div class="headline_news" style="background: url('{{p.photo.url}}') no-repeat;background-size: cover;">
+                <h1 class="headline_news-title">{{p.title_en}}</h1>
+            </div>
+            <div class="flex service_price">
+                <div>
+                    <p>
+                        {% autoescape on %}
+                        {{p.content_en|linebreaks}}
+                        {% endautoescape %}
+                    </p>
+                </div>
+                <span>starts at {{p.price}} rubles</span>
+
+            </div>
+            <button class="default_button sign_up" onclick="location.href='https://t.me/LegalMigrationCentreBot?start=hello'">
+                Make an appointment for a consultation
+            </button>
+            {% endfor %}
         {% endblock %}
     </main>
-    <footer id="contacts-section">
+     <footer id="contacts-section">
         <div class="container flex">
             <div class="footer-info-company">
                 <svg width="342" height="34" viewBox="0 0 342 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +171,7 @@
                     <path d="M322.129 8.87134C322.763 8.87134 323.3 8.99531 323.782 9.25703C324.251 9.51875 324.623 9.84934 324.898 10.2488C325.16 10.6483 325.298 11.1166 325.298 11.6263C325.298 12.2048 325.119 12.7145 324.76 13.1553C324.402 13.5961 323.92 13.8164 323.314 13.8164C322.832 13.8164 322.391 13.6649 322.019 13.3481C321.647 13.0313 321.468 12.5905 321.468 12.012C321.468 11.5712 321.592 11.1993 321.826 10.8824C322.061 10.5656 322.35 10.3177 322.639 10.1386C322.474 9.90444 322.24 9.79424 321.909 9.79424C321.193 9.79424 320.532 10.0146 319.926 10.4416C319.319 10.8687 318.81 11.4197 318.397 12.0946C317.983 12.7696 317.653 13.4859 317.419 14.2297C317.184 14.9873 317.074 15.6898 317.074 16.3372V23.7204C317.074 24.8637 317.405 25.6213 318.066 26.007C318.727 26.3927 319.623 26.5856 320.766 26.5856V27.3156C320.229 27.2881 319.485 27.2605 318.507 27.233C317.529 27.2054 316.496 27.1779 315.407 27.1779C314.622 27.1779 313.837 27.1917 313.052 27.233C312.281 27.2743 311.688 27.3018 311.289 27.3156V26.5856C312.239 26.5856 312.914 26.4065 313.327 26.0621C313.727 25.7178 313.934 25.0566 313.934 24.0786V13.1828C313.934 12.1359 313.754 11.3646 313.383 10.8687C313.011 10.3728 312.322 10.1248 311.289 10.1248V9.39478C312.033 9.46365 312.749 9.50498 313.451 9.50498C314.154 9.50498 314.774 9.46365 315.38 9.381C316 9.29836 316.551 9.17438 317.06 9.00909V13.3619C317.322 12.6869 317.68 12.012 318.162 11.3232C318.631 10.6345 319.209 10.0697 319.884 9.6014C320.559 9.13306 321.303 8.91267 322.116 8.91267L322.129 8.87134Z" fill="white"/>
                     <path d="M334.554 8.87095C336.593 8.87095 338.191 9.49081 339.334 10.7305C340.477 11.9703 341.056 13.8987 341.056 16.5297H328.769L328.727 15.8685H337.709C337.75 14.7252 337.667 13.6783 337.433 12.7141C337.199 11.7499 336.841 10.9785 336.331 10.3999C335.821 9.8214 335.188 9.53213 334.403 9.53213C333.328 9.53213 332.392 10.0693 331.565 11.13C330.739 12.1906 330.243 13.8849 330.091 16.2129L330.201 16.3506C330.16 16.695 330.119 17.0807 330.091 17.4939C330.064 17.9071 330.05 18.3342 330.05 18.7474C330.05 20.3315 330.312 21.6814 330.821 22.8247C331.331 23.968 331.992 24.822 332.819 25.4143C333.645 26.0066 334.499 26.2959 335.381 26.2959C336.069 26.2959 336.744 26.1857 337.364 25.9653C337.998 25.7449 338.576 25.373 339.1 24.8633C339.637 24.3537 340.092 23.665 340.491 22.8109L341.18 23.0864C340.918 23.8578 340.505 24.5879 339.926 25.3179C339.348 26.0342 338.618 26.6265 337.736 27.0811C336.855 27.5356 335.835 27.756 334.678 27.756C333.011 27.756 331.579 27.3703 330.38 26.6127C329.182 25.8413 328.273 24.7807 327.626 23.4308C326.978 22.0809 326.675 20.5106 326.675 18.7474C326.675 16.7087 327.006 14.9456 327.653 13.4717C328.3 11.9978 329.223 10.8683 330.408 10.0556C331.593 9.25664 332.97 8.85718 334.554 8.85718V8.87095Z" fill="white"/>
                     </svg>
-                <p id="footer_description">Помощь в подготовке документов, касающихся миграционных процессов.</p>
+                <p id="footer_description">Assistance in the preparation of documents related to migration processes.</p>
 
                 <div class="flex-column footer-phone">
                     <a href="tel:+79645228198">+7 (964) 522-81-98</a>
@@ -180,14 +191,14 @@
                             <path d="M7.84498 0.0478516C3.61244 0.0478516 0.179321 3.37534 0.179321 7.47764C0.179321 13.05 7.84498 21.2758 7.84498 21.2758C7.84498 21.2758 15.5106 13.05 15.5106 7.47764C15.5106 3.37534 12.0775 0.0478516 7.84498 0.0478516ZM7.84498 10.1311C6.33375 10.1311 5.10724 8.94237 5.10724 7.47764C5.10724 6.01291 6.33375 4.82415 7.84498 4.82415C9.35621 4.82415 10.5827 6.01291 10.5827 7.47764C10.5827 8.94237 9.35621 10.1311 7.84498 10.1311Z" fill="white"/>
                         </svg>
 
-                        г. Москва, ул. Малая Юшуньская, д. 1, корп. 1, этаж 9, офис 903 (БЦ "Берлин")
+                        Moscow, Malaya Yushunskaya str., 1, building 1, floor 9, office 903 (Business center "Berlin")
                     </span>
                 </div>
 
-                <p>ИП Удовидчик Павел Валерьевич</p>
-                <p>ОГРНИП 324480000028179</p>
-                <p>ИНН 482603225602</p>
-                <a href="/privacy_policy"><p style="margin-bottom: 1rem;">Политика конфиденциальности</p></a>
+                <p>IE Udovidchik Pavel Valerievich</p>
+                <p>OGRNIP 324480000028179</p>
+                <p>INN 482603225602</p>
+                <a href="/privacy_policy"><p style="margin-bottom: 1rem;">Privacy policy</p></a>
 
                 <div class="flex messengers">
                     <a href="https://t.me/LegalMigrationCentreBot?start=hello">
@@ -205,23 +216,23 @@
             <div id="map_container" class="map"></div>
         </div>
     </footer>
-    <script src="{% static 'news/js/content.js' %}"></script>
-    <script src="{% static 'news/js/map.js' %}"></script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        <script src="{% static 'news/js/content.js' %}"></script>
+        <script src="{% static 'news/js/map.js' %}"></script>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();
+           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-       ym(98019098, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/98019098" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+           ym(98019098, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/98019098" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
 </body>
 </html>

@@ -24,12 +24,21 @@ def all_news(request):
 
 def get_news(request, post_slug):
     post = News.objects.filter(slug=post_slug)
+    if len(post) == 0:
+        return render(request, 'news/error.html', status=404)
     return render(request, 'news/news.html', context={'post': post})
 
 
 def get_comments(request):
     reviews = Reviews.objects.all()
     return render(request, 'news/comment.html', context={'reviews': reviews})
+
+
+def get_service(request, service_slug):
+    service = Service.objects.filter(slug=service_slug)
+    if len(service) == 0:
+        return render(request, 'news/error.html', status=404)
+    return render(request, 'news/service.html', context={'service': service})
 
 
 # EN
@@ -51,12 +60,29 @@ def all_news_en(request):
 
 def get_news_en(request, post_slug):
     post = News.objects.filter(slug=post_slug)
+    if len(post) == 0:
+        return render(request, 'news/error.html', status=404)
     return render(request, 'news/news_en.html', context={'post': post})
 
 
 def get_comments_en(request):
     reviews = Reviews.objects.all()
     return render(request, 'news/comment_en.html', context={'reviews': reviews})
+
+
+def get_service_en(request, service_slug):
+    service = Service.objects.filter(slug=service_slug)
+    if len(service) == 0:
+        return render(request, 'news/error.html', status=404)
+    return render(request, 'news/service_en.html', context={'service': service})
+
+
+def get_consent_data_processing(request):
+    return render(request, 'news/consent_data_processing.html')
+
+
+def get_privacy_policy(request):
+    return render(request, 'news/privacy_policy.html')
 
 
 def page_not_found(requests, exception):
